@@ -4,9 +4,9 @@ uvicorn==0.24.0
 
 # AI/ML dependencies
 sentence-transformers==2.2.2
-torch==2.1.0
+torch==2.8.0  # Latest version with Python 3.13 support
 transformers==4.35.0
-tokenizers==0.13.3  # Last version with prebuilt wheels
+tokenizers==0.13.3
 
 # Vector database
 pinecone-client==5.0.1
