@@ -5,8 +5,8 @@ uvicorn==0.24.0           # ASGI server for running FastAPI applications
 # AI/ML dependencies
 sentence-transformers==2.2.2  # For creating text embeddings locally
 torch==2.8.0              # PyTorch for running ML models
-transformers==4.45.2      # Hugging Face transformers library
-tokenizers==0.20.1        # Prebuilt wheels for Python 3.11 on Linux
+transformers==4.35.0      # Hugging Face transformers library
+tokenizers==0.14.1        # Prebuilt wheels for Python 3.11 on Linux
 
 # Vector database
 pinecone-client==5.0.1    # Official Pinecone client for vector storage
