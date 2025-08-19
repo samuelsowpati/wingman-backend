@@ -4,11 +4,9 @@ uvicorn==0.24.0
 
 # AI/ML dependencies
 sentence-transformers==2.2.2
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==2.1.0+cpu
+torch==2.1.0
 transformers==4.35.0
---extra-index-url https://pypi.fury.io/huggingface/
-tokenizers==0.15.0
+tokenizers==0.13.3  # Last version with prebuilt wheels
 
 # Vector database
 pinecone-client==5.0.1
