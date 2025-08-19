@@ -8,7 +8,7 @@ torch==2.8.0              # PyTorch for running ML models
 transformers==4.35.0      # Hugging Face transformers library
 
 # Vector database
-pinecone-client==3.0.0    # Official Pinecone client for vector storage
+pinecone-client==5.0.1    # Official Pinecone client for vector storage
 
 # PDF processing
 pdfminer.six==20231228    # Robust PDF text extraction library
