@@ -70,7 +70,7 @@ def _safe_extract_pages(file_path: str) -> List[str]:
         if not pages:
             raise RuntimeError("No pages extracted via layout traversal.")
         return pages
-        except Exception as e:
+    except Exception as e:
         logger.warning(f"Falling back to whole-document extract_text: {e}")
         # Fallback: single blob
         text = extract_text(file_path) or ""
@@ -149,8 +149,8 @@ def _clean(text: str) -> str:
 
 def _sentences(text: str) -> List[str]:
     text = _clean(text)
-        if not text:
-            return []
+    if not text:
+        return []
     # Protect em-dash enumerations by replacing with period+space surrogate to avoid joining
     sents = SENTENCE_SPLIT_RE.split(text)
     return [s.strip() for s in sents if s.strip()]
@@ -161,7 +161,7 @@ def _tokens_count(text: str) -> int:
 
 def _pack_sentences(sent_list: List[str], target_size: int = 550, overlap: int = 60) -> List[str]:
     """Greedy pack sentences into chunks ~target_size with token overlap."""
-        chunks = []
+    chunks = []
     cur = []
     cur_len = 0
     for s in sent_list:
@@ -183,9 +183,10 @@ def _pack_sentences(sent_list: List[str], target_size: int = 550, overlap: int =
                     words_needed -= tw
                 cur = list(reversed(tail))
                 cur_len = sum(_tokens_count(x) for x in cur)
-                else:
+            else:
                 cur = []
                 cur_len = 0
+            
         cur.append(s)
         cur_len += sl
     if cur:
