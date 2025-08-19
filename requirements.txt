@@ -1,30 +1,27 @@
 # Core FastAPI dependencies
-fastapi==0.104.1          # Modern Python web framework for building APIs
-uvicorn==0.24.0           # ASGI server for running FastAPI applications
+fastapi==0.104.1
+uvicorn==0.24.0
 
 # AI/ML dependencies
-sentence-transformers==2.2.2  # For creating text embeddings locally
-torch==2.8.0              # PyTorch for running ML models
-transformers==4.45.2      # Hugging Face transformers library (cp313 compatible)
-tokenizers==0.20.1        # Version with cp313 wheels
+sentence-transformers==2.2.2
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.1.0+cpu
+transformers==4.35.0
+--extra-index-url https://pypi.fury.io/huggingface/
+tokenizers==0.15.0
 
 # Vector database
-pinecone-client==5.0.1    # Official Pinecone client for vector storage
+pinecone-client==5.0.1
 
 # PDF processing
-pdfminer.six==20231228    # Robust PDF text extraction library
-requests==2.31.0          # HTTP library for downloading PDFs
-beautifulsoup4==4.12.2    # HTML parsing (if needed for web scraping)
+pdfminer.six==20231228
+requests==2.31.0
+beautifulsoup4==4.12.2
 
 # Utilities
-python-multipart==0.0.6  # For handling form data in FastAPI
-python-dotenv==1.0.0     # For loading environment variables from .env file
-typing-extensions==4.8.0 # Enhanced type hints
+python-multipart==0.0.6
+python-dotenv==1.0.0
+typing-extensions==4.8.0
 
 # LLM Integration
-aiohttp==3.9.0           # Async HTTP client for Ollama API calls
-
-# Development dependencies (optional)
-pytest==7.4.3           # Testing framework
-black==23.11.0           # Code formatter
-flake8==6.1.0           # Code linter
+aiohttp==3.9.0
