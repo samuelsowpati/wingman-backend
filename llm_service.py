@@ -17,6 +17,7 @@ import json
 import logging
 from typing import List, Dict, Any, Optional, AsyncGenerator
 import time
+import os
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -41,8 +42,11 @@ class OllamaService:
             base_url: Ollama server URL (default: http://localhost:11434)
             model: Model name to use (default: llama3.2:3b)
         """
-        self.base_url = base_url.rstrip('/')
-        self.model = model
+        # Allow configuration via environment variables for deployments (e.g., Render)
+        env_base_url = os.getenv("OLLAMA_URL")
+        env_model = os.getenv("OLLAMA_MODEL")
+        self.base_url = (env_base_url or base_url).rstrip('/')
+        self.model = env_model or model
         self.session = None
         logger.info(f"🦙 Initializing Ollama service...")
         logger.info(f"🔗 Server: {self.base_url}")

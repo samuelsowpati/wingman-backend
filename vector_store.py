@@ -42,8 +42,10 @@ class PineconeService:
             index_name: Name of the Pinecone index to use
             dimension: Size of embedding vectors (384 for all-MiniLM-L6-v2)
         """
-        self.index_name = index_name
-        self.dimension = dimension
+        # Allow overriding via environment for deployment flexibility
+        self.index_name = os.getenv("PINECONE_INDEX", index_name)
+        # Ensure dimension matches your embedding model
+        self.dimension = int(os.getenv("PINECONE_DIMENSION", str(dimension)))
         
         # Get API key from environment variable
         api_key = os.getenv("PINECONE_API_KEY")
@@ -81,8 +83,8 @@ class PineconeService:
                     dimension=self.dimension,
                     metric="cosine",  # Best for text similarity
                     spec=ServerlessSpec(
-                        cloud="aws",      # Cloud provider
-                        region="us-east-1"  # Free tier region
+                        cloud=os.getenv("PINECONE_CLOUD", "aws"),
+                        region=os.getenv("PINECONE_REGION", "us-east-1")
                     )
                 )
                 
