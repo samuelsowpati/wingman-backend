@@ -1,0 +1,25 @@
+# Exclude frontend (it’s its own repo)
+frontend/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+.env
+.env.*
+*.log
+
+# Data/large files
+*.pdf
+*.db
+*.sqlite
+*.parquet
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

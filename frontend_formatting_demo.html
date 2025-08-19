@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Formatting Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .role-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgb(240 253 244);
+            border-left: 4px solid rgb(34 197 94);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+        }
+        
+        .checkmark {
+            color: rgb(34 197 94);
+            font-size: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .role-text {
+            flex: 1;
+            font-weight: 600;
+            color: rgb(21 128 61);
+        }
+        
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .before, .after {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px 0;
+        }
+        
+        .before h3 {
+            color: #dc2626;
+            margin-top: 0;
+        }
+        
+        .after h3 {
+            color: #16a34a;
+            margin-top: 0;
+        }
+        
+        .old-format {
+            color: #64748b;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Frontend Formatting Demo</h1>
+    <p>This demonstrates how Air Force roles will be displayed in the frontend with the new formatting.</p>
+    
+    <div class="demo-section">
+        <h2>Before (Old Formatting)</h2>
+        <div class="before">
+            <h3>❌ Gray Checkmarks & Inline Text</h3>
+            <div class="old-format">
+                2.1. Secretary of the Air Force (SECAF). The Secretary is responsible for the affairs of the Department of the Air Force. 2.2. Administrative Assistant to the Secretary of the Air Force (SAF/AA). The Administrative Assistant serves as the principal staff assistant to the Secretary. 2.3. Deputy Chief of Staff, Operations (AF/A3). The Deputy Chief of Staff for Operations is responsible for operational planning.
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>After (New Formatting)</h2>
+        <div class="after">
+            <h3>✅ Green Checkmarks & Separate Lines</h3>
+            
+            <div class="role-item">
+                <span class="checkmark">✅</span>
+                <span class="role-text">2.1. Secretary of the Air Force (SECAF). The Secretary is responsible for the affairs of the Department of the Air Force.</span>
+            </div>
+            
+            <div class="role-item">
+                <span class="checkmark">✅</span>
+                <span class="role-text">2.2. Administrative Assistant to the Secretary of the Air Force (SAF/AA). The Administrative Assistant serves as the principal staff assistant to the Secretary.</span>
+            </div>
+            
+            <div class="role-item">
+                <span class="checkmark">✅</span>
+                <span class="role-text">2.3. Deputy Chief of Staff, Operations (AF/A3). The Deputy Chief of Staff for Operations is responsible for operational planning.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Key Improvements</h2>
+        <div class="list-item">
+            <span class="checkmark">✅</span>
+            <span><strong>Green checkmarks</strong> instead of gray ones for better visibility</span>
+        </div>
+        <div class="list-item">
+            <span class="checkmark">✅</span>
+            <span><strong>Each role on a separate line</strong> for better readability</span>
+        </div>
+        <div class="list-item">
+            <span class="checkmark">✅</span>
+            <span><strong>Highlighted backgrounds</strong> with green accents</span>
+        </div>
+        <div class="list-item">
+            <span class="checkmark">✅</span>
+            <span><strong>Consistent formatting</strong> across all response types</span>
+        </div>
+        <div class="list-item">
+            <span class="checkmark">✅</span>
+            <span><strong>Better visual hierarchy</strong> with proper spacing</span>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Technical Changes Made</h2>
+        <div style="background: #f1f5f9; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 14px;">
+            <p><strong>Backend Changes:</strong></p>
+            <ul>
+                <li>Updated main.py chat endpoint formatting</li>
+                <li>Updated llm_service.py fallback response formatting</li>
+                <li>Added regex pattern: <code>r'(\d+\.\d+\.)'</code> → <code>r'\n✅ \1'</code></li>
+            </ul>
+            
+            <p><strong>Frontend Changes:</strong></p>
+            <ul>
+                <li>Enhanced formatLLMResponse() function</li>
+                <li>Added detection for ✅ role patterns</li>
+                <li>Replaced ✓ with ✅ throughout</li>
+                <li>Added green highlighting for Air Force roles</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Core FastAPI dependencies
+fastapi==0.104.1          # Modern Python web framework for building APIs
+uvicorn==0.24.0           # ASGI server for running FastAPI applications
+
+# AI/ML dependencies
+sentence-transformers==2.2.2  # For creating text embeddings locally
+torch==2.1.0              # PyTorch for running ML models
+transformers==4.35.0      # Hugging Face transformers library
+
+# Vector database
+pinecone-client==3.0.0    # Official Pinecone client for vector storage
+
+# PDF processing
+pdfminer.six==20231228    # Robust PDF text extraction library
+requests==2.31.0          # HTTP library for downloading PDFs
+beautifulsoup4==4.12.2    # HTML parsing (if needed for web scraping)
+
+# Utilities
+python-multipart==0.0.6  # For handling form data in FastAPI
+python-dotenv==1.0.0     # For loading environment variables from .env file
+asyncio==3.4.3           # For asynchronous programming
+typing-extensions==4.8.0 # Enhanced type hints
+
+# LLM Integration
+aiohttp==3.9.0           # Async HTTP client for Ollama API calls
+
+# Development dependencies (optional)
+pytest==7.4.3           # Testing framework
+black==23.11.0           # Code formatter
+flake8==6.1.0           # Code linter
