@@ -13,7 +13,7 @@ __pycache__/
 *.log
 
 # Data/large files
-*.pdf
+
 *.db
 *.sqlite
 *.parquet
